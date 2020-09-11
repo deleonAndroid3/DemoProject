@@ -103,9 +103,9 @@ workflows:
   node-android-ios:
     jobs:
       - install-node-example
-      # - node
-      # - android:
-      #     requires:
-      #       - node
+      - node
+      - android:
+          requires:
+            - node
 
 
