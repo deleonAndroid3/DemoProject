@@ -56,10 +56,12 @@ jobs:
           at: ~/demo-react-native
 
       - run:
-        name: chmod permissions
-        command: chmod +x ./gradlew
+          name: chmod permissions
+          command: chmod +x ./gradlew
 
-      - run: ./gradlew assembleDebug
+      - run: 
+          name: Build Apk
+          command: ./gradlew assembleDebug
 
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
