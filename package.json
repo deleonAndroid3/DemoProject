@@ -10,8 +10,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "appium": "^1.18.1",
+    "appium-doctor": "^1.15.3",
     "react": "16.13.1",
-    "react-native": "0.63.2"
+    "react-native": "0.63.2",
+    "wd": "^1.13.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
