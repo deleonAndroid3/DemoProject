@@ -59,9 +59,7 @@ jobs:
         name: chmod permissions
         command: chmod +x ./gradlew
 
-      - run: 
-        name: Build Apk
-        command: ./gradlew assembleDebug
+      - run: ./gradlew assembleDebug
 
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
