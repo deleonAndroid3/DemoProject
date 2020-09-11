@@ -3,14 +3,14 @@ orbs:
   node: circleci/node@4.0.0
 
 jobs:
-  install-node-example:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - checkout
-      - node/install:
-          install-yarn: true
-      - run: node --version
+  # install-node-example:
+  #   docker:
+  #     - image: 'cimg/base:stable'
+  #   steps:
+  #     - checkout
+  #     - node/install:
+  #         install-yarn: true
+  #     - run: node --version
 
   node:
     working_directory: ~/demo-react-native
@@ -67,6 +67,11 @@ jobs:
       - attach_workspace:
           at: ~/demo-react-native
 
+      - node/install:
+          install-yarn: true
+
+      - run: node --version
+
       - run:
           name: chmod permissions
           command: chmod +x ./gradlew
@@ -102,7 +107,7 @@ workflows:
   version: 2.1
   node-android-ios:
     jobs:
-      - install-node-example
+      # - install-node-example
       - node
       - android:
           requires:
