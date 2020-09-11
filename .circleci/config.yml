@@ -56,21 +56,40 @@ jobs:
           at: ~/demo-react-native
 
       - restore_cache:
-          key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
 
-      - run: bundle install
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+
+      # - restore_cache:
+      #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
+
+      - run: yarn install
+
+      # - run: bundle install
 
       - save_cache:
-          key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
           paths:
-            - vendor/bundle
+            - ~/.cache/yarn
 
-      - run:
-          name: fastlane tests
-          command: |
-            mkdir -p test-results/fastlane
-            bundle exec fastlane test
-            mv fastlane/report.xml test-results/fastlane
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+
+      # - save_cache:
+      #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
+      #     paths:
+      #       - vendor/bundle
+
+      # - run:
+      #     name: fastlane tests
+      #     command: |
+      #       mkdir -p test-results/fastlane
+      #       bundle exec fastlane test
+      #       mv fastlane/report.xml test-results/fastlane
+
       - store_test_results:
           path: test-results
 
