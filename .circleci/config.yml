@@ -73,7 +73,7 @@ jobs:
       - run: node --version
 
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "browserstack_android_sample/build.gradle" }}
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
           command: sudo chmod +x ./gradlew
@@ -83,7 +83,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "browserstack_android_sample/build.gradle" }}
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run: 
           name: Build Apk
           command: ./gradlew assembleDebug
