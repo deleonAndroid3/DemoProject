@@ -34,10 +34,10 @@ const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@h
 driver.init(capabilities)
 // .sleep(3000)
 .then(function(){
-  return driver.elementByAccessibilityId('nameInput').sendKeys('Carlo');
+  return driver.findElementByAccessibilityId('nameInput').sendKeys('Carlo');
 })
 .then(function(){
-    return driver.elementByAccessibilityId('saveName').click();
+    return driver.findElementByAccessibilityId('saveName').click();
 })
 .fin(function(){return driver.quit(); })
 .done();
