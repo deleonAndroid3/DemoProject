@@ -106,7 +106,11 @@ jobs:
               exit 1;
             fi
 
-      - run: ./gradlew test      
+      - run: ./gradlew test     
+      
+      - run:
+          path: ~/demo-react-native/test
+          command: node myTest.test.js
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
 
