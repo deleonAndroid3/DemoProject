@@ -107,9 +107,7 @@ jobs:
             fi
 
       - run: ./gradlew test      
-
-      - run: npm 
-
+      
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
 
