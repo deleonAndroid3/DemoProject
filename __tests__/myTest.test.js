@@ -21,7 +21,7 @@ var app = process.env.BROWSERSTACK_APP_ID;
 var capabilities = {
   'browserstack.user' : 'johncarlodeleon1',
   'browserstack.key' : 'EPnWvRvF8sxcKEC9xpat',
-  'app' : app,
+  'app' : 'bs://f6c09c23d8b7f0c6d554c86438d7b2d47ab188e3',
   'device' : 'Samsung Galaxy S8',
   'build' : 'MyBuild',
 };
