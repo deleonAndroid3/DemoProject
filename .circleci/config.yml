@@ -84,6 +84,8 @@ jobs:
           paths:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+
+      # Build Apk and Upload to Browserstack then test
       - run: 
           name: Build Apk
           command: ./gradlew assembleDebug
@@ -105,6 +107,8 @@ jobs:
             fi
 
       - run: ./gradlew test      
+
+      - run: npm 
 
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}

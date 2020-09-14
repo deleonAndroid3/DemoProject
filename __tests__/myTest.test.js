@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 
-import wd from 'wd';
+var wd = require('wd');
+var assert = require('assert');
+var asserters = wd.asserters;
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
 // const PORT = 4723;
@@ -17,14 +19,14 @@ var accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
 var app = process.env.BROWSERSTACK_APP_ID;
 
 var capabilities = {
-  'browserstack.user' : userName,
-  'browserstack.key' : accessKey,
+  'browserstack.user' : 'johncarlodeleon1',
+  'browserstack.key' : 'EPnWvRvF8sxcKEC9xpat',
   'app' : app,
   'device' : 'Samsung Galaxy S8',
   'build' : 'MyBuild',
 };
 
-const driver = wd.promiseRemote('https://hub-cloud.browserstack.com/wd/hub');
+const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@hub-cloud.browserstack.com/wd/hub');
 
 beforeAll(async () => {
     await driver.init(capabilities);
