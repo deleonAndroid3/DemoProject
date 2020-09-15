@@ -31,16 +31,15 @@ var capabilities = {
 
 const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@hub-cloud.browserstack.com/wd/hub');
 
-// driver.init(capabilities)
-// // .sleep(3000)
-// .then(function(){
-//   return driver.findElementByAccessibilityId('nameInput').sendKeys('Carlo');
-// })
-// .then(function(){
-//     return driver.findElementByAccessibilityId('saveName').click();
-// })
-// .fin(function(){return driver.quit(); })
-// .done();
+driver.init(capabilities)
+.then(function(){
+  return driver.elementByAccessibilityId('nameInput').sendKeys('Carlo');
+})
+.then(function(){
+    return driver.elementByAccessibilityId('saveName').click();
+})
+.fin(function(){return driver.quit(); })
+.done();
 
 // beforeAll(async () => {
 //     await driver.init(capabilities);
@@ -65,20 +64,19 @@ const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@h
 //     await driver.elementByAccessibilityId('saveName').click();
 //   });
 
+  // describe('Demo Test', function() {
 
-  describe('Demo Test', function() {
+  //   beforeEach(async function() {await driver.init(capabilities);});
 
-    beforeEach(async function() {await driver.init(capabilities);});
+  //   it('should input correct value',async function() {
+  //     const element = await driver.elementByAccessibilityId('nameInput');
+  //     await element.sendKeys('Carlo');
+  //     await driver.elementByAccessibilityId('saveName').click();
+  //   });
 
-    it('should input correct value',async function() {
-      const element = await driver.elementByAccessibilityId('nameInput');
-      await element.sendKeys('Carlo');
-      await driver.elementByAccessibilityId('saveName').click();
-    });
-
-    it('should input wrong value',async function() {
-      const element = await driver.elementByAccessibilityId('nameInput');
-      await element.sendKeys('Carlo123');
-      await driver.elementByAccessibilityId('saveName').click();
-    });
-  });
+  //   it('should input wrong value',async function() {
+  //     const element = await driver.elementByAccessibilityId('nameInput');
+  //     await element.sendKeys('Carlo123');
+  //     await driver.elementByAccessibilityId('saveName').click();
+  //   });
+  // });
