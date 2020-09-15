@@ -1,8 +1,6 @@
 /* eslint-disable prettier/prettier */
+import wd from 'wd';
 
-var wd = require('wd');
-var assert = require('assert');
-var asserters = wd.asserters;
 
 // jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
 // const PORT = 4723;
