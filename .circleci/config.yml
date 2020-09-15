@@ -59,6 +59,11 @@ jobs:
       - attach_workspace:
           at: ~/demo-react-native
 
+      - node/install:
+          install-yarn: true
+
+      - run: node --version
+
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
@@ -94,8 +99,6 @@ jobs:
             fi
 
       - run: ./gradlew test     
-
-      - run: react-native run-android
       
       - run:
           path: ~/demo-react-native/__tests__
