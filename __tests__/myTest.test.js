@@ -33,16 +33,10 @@ const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@h
 
 driver.init(capabilities)
 .then(function(){
-  return driver.elementsByAccessibilityId('nameInput');
-})
-.then(function (nameInput) {
-  return nameInput.type('Carlo');
+  return driver.elementByAccessibilityId('nameInput').type('Carlo');
 })
 .then(function(){
-  return driver.elementsByAccessibilityId('saveName');
-})
-.then(function (saveName) {
-  saveName.click();
+  return driver.elementByAccessibilityId('saveName').click();
 })
 .fin(function(){return driver.quit(); })
 .done();
