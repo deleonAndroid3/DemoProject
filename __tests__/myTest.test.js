@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
-import wd from 'wd';
 
+var wd = require('wd');
+var assert = require('assert');
+var asserters = wd.asserters;
 
 // jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
 // const PORT = 4723;
@@ -46,19 +48,19 @@ beforeAll(async () => {
   }); // Sometime for the app to load
 
 test('Correct Input', async () => {
-    const element = await driver.findElementByAccessibilityId('nameInput');
+    const element = await driver.elementByAccessibilityId('nameInput');
     await element.sendKeys('Carlo');
-    await driver.findElementByAccessibilityId('saveName').click();
+    await driver.elementByAccessibilityId('saveName').click();
   });
 
 test('Wrong Input', async () => {
-    const element = await driver.findElementByAccessibilityId('nameInput');
+    const element = await driver.elementByAccessibilityId('nameInput');
     await element.sendKeys('Carlo123');
-    await driver.findElementByAccessibilityId('saveName').click();
+    await driver.elementByAccessibilityId('saveName').click();
   });
 
 test('Empty Input', async () => {
-    const element = await driver.findElementByAccessibilityId('nameInput');
+    const element = await driver.elementByAccessibilityId('nameInput');
     await element.sendKeys('');
-    await driver.findElementByAccessibilityId('saveName').click();
+    await driver.elementByAccessibilityId('saveName').click();
   });
