@@ -102,7 +102,7 @@ jobs:
 
       - run: ./gradlew test     
 
-      - run: react-native run-android
+      # - run: react-native run-android
       
       - run:
           path: ~/demo-react-native/__tests__
