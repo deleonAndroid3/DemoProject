@@ -17,10 +17,6 @@ jobs:
       - restore_cache:
           key: node-v1-{{ checksum "package.json" }}-{{ arch }}
 
-      - node/install:
-          install-yarn: true
-          install-node: false
-
       - run: npm install wd
 
       - run: npm i -g react-native-cli
