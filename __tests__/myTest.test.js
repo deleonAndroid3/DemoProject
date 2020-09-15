@@ -21,15 +21,15 @@ var capabilities = {
 
 const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@hub-cloud.browserstack.com/wd/hub');
 
-driver.init(capabilities)
-.then(function(){
-  return driver.elementByAccessibilityId('nameInput');
-})
-.then(function(){
-  return driver.elementByAccessibilityId('saveName');
-})
-.fin(function(){return driver.quit(); })
-.done();
+// driver.init(capabilities)
+// .then(function(){
+//   return driver.elementByAccessibilityId('nameInput');
+// })
+// .then(function(){
+//   return driver.elementByAccessibilityId('saveName');
+// })
+// .fin(function(){return driver.quit(); })
+// .done();
 
 // beforeAll(async () => {
 //     await driver.init(capabilities);
@@ -54,19 +54,19 @@ driver.init(capabilities)
 //     await driver.elementByAccessibilityId('saveName').click();
 //   });
 
-  // describe('Demo Test', function() {
+  describe('Demo Test', function() {
 
-  //   beforeEach(async function() {await driver.init(capabilities);});
+    beforeEach(async function() {await driver.init(capabilities);});
 
-  //   it('should input correct value',async function() {
-  //     const element = await driver.elementByAccessibilityId('nameInput');
-  //     await element.sendKeys('Carlo');
-  //     await driver.elementByAccessibilityId('saveName').click();
-  //   });
+    it('should input correct value',async function() {
+      const element = await driver.elementByAccessibilityId('nameInput');
+      await element.sendKeys('Carlo');
+      await driver.elementByAccessibilityId('saveName').click();
+    });
 
-  //   it('should input wrong value',async function() {
-  //     const element = await driver.elementByAccessibilityId('nameInput');
-  //     await element.sendKeys('Carlo123');
-  //     await driver.elementByAccessibilityId('saveName').click();
-  //   });
-  // });
+    it('should input wrong value',async function() {
+      const element = await driver.elementByAccessibilityId('nameInput');
+      await element.sendKeys('Carlo123');
+      await driver.elementByAccessibilityId('saveName').click();
+    });
+  });

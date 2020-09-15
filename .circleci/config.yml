@@ -17,7 +17,7 @@ jobs:
       - restore_cache:
           key: node-v1-{{ checksum "package.json" }}-{{ arch }}
 
-      - run: npm install wd
+      - run: npm install webdriverio
 
       - save_cache:
           key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
@@ -62,8 +62,6 @@ jobs:
       - node/install:
           install-yarn: true
 
-      - run: node --version
-
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
@@ -100,9 +98,11 @@ jobs:
 
       - run: ./gradlew test     
       
-      - run:
-          path: ~/demo-react-native/__tests__
-          command: node myTest.test.js
+      # - run:
+      #     path: ~/demo-react-native/__tests__
+      #     command: node myTest.test.js
+
+      - run: npm run single
 
       
       # - restore_cache:
