@@ -36,7 +36,7 @@ driver.init(capabilities)
   return driver.elementsByAccessibilityId('nameInput');
 })
 .then(function (nameInput) {
-  return nameInput.sendKeys('Carlo');
+  return nameInput.type('Carlo');
 })
 .then(function(){
   return driver.elementsByAccessibilityId('saveName');
