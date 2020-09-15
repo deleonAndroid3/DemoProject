@@ -4,16 +4,6 @@ var wd = require('wd');
 var assert = require('assert');
 var asserters = wd.asserters;
 
-// jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
-// const PORT = 4723;
-// const config = {
-//   platformName: 'Android',
-//   deviceName: 'Android Emulator',
-//   app:
-//     'C:/Users/Carlo/Documents/1.Projects/React Native/DemoProject/android/app/build/outputs/apk/debug/app-debug.apk',
-// };
-// const driver = wd.promiseChainRemote('localhost', PORT);
-
 var userName = process.env.BROWSERSTACK_USERNAME;
 var accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
 var app = process.env.BROWSERSTACK_APP_ID;
@@ -33,10 +23,10 @@ const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@h
 
 driver.init(capabilities)
 .then(function(){
-  return driver.elementByAccessibilityId('nameInput').type('Carlo');
+  return driver.elementByAccessibilityId('nameInput');
 })
 .then(function(){
-  return driver.elementByAccessibilityId('saveName').click();
+  return driver.elementByAccessibilityId('saveName');
 })
 .fin(function(){return driver.quit(); })
 .done();
