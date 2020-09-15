@@ -14,14 +14,14 @@ var asserters = wd.asserters;
 // };
 // const driver = wd.promiseChainRemote('localhost', PORT);
 
-// var userName = process.env.BROWSERSTACK_USERNAME;
-// var accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
-// var app = process.env.BROWSERSTACK_APP_ID;
+var userName = process.env.BROWSERSTACK_USERNAME;
+var accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
+var app = process.env.BROWSERSTACK_APP_ID;
 
 var capabilities = {
-  'browserstack.user' : 'johncarlodeleon1',
-  'browserstack.key' : 'EPnWvRvF8sxcKEC9xpat',
-  'app' : 'bs://f6c09c23d8b7f0c6d554c86438d7b2d47ab188e3',
+  'browserstack.user' : userName,
+  'browserstack.key' : accessKey,
+  'app' : app,
   'project': 'Demo Project',
   'device' : 'Google Pixel 3',
   'build' : 'React Native Demo',

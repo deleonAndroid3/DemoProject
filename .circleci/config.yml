@@ -3,14 +3,6 @@ orbs:
   node: circleci/node@4.0.0
 
 jobs:
-  # install-node-example:
-  #   docker:
-  #     - image: 'cimg/base:stable'
-  #   steps:
-  #     - checkout
-  #     - node/install:
-  #         install-yarn: true
-  #     - run: node --version
 
   node:
     working_directory: ~/demo-react-native
@@ -26,6 +18,8 @@ jobs:
           key: node-v1-{{ checksum "package.json" }}-{{ arch }}
 
       - run: yarn install
+
+      - run: npm install wd
 
       - save_cache:
           key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
@@ -111,6 +105,8 @@ jobs:
       - run:
           path: ~/demo-react-native/__tests__
           command: node myTest.test.js
+
+      
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
 
