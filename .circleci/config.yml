@@ -98,11 +98,11 @@ jobs:
 
       - run: ./gradlew test     
       
-      # - run:
-      #     path: ~/demo-react-native/__tests__
-      #     command: node myTest.test.js
+      - run:
+          path: ~/demo-react-native/__tests__
+          command: node myTest.test.js
 
-      - run: npm run single
+      # - run: npm run single
 
       
       # - restore_cache:
