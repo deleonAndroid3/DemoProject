@@ -17,7 +17,7 @@ jobs:
       - restore_cache:
           key: node-v1-{{ checksum "package.json" }}-{{ arch }}
 
-      - run: npm install webdriverio
+      - run: npm install wd
 
       - save_cache:
           key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
@@ -101,9 +101,6 @@ jobs:
       - run:
           path: ~/demo-react-native/__tests__
           command: node myTest.test.js
-
-      # - run: npm run single
-
       
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}

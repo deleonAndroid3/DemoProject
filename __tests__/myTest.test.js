@@ -19,7 +19,7 @@ var capabilities = {
   'name': 'Unit Test',
 };
 
-const driver = wd.promiseRemote('httpshttps://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@hub-cloud.browserstack.com/wd/hub://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@hub-cloud.browserstack.com/wd/hub');
+const driver = wd.promiseRemote('http://@hub-cloud.browserstack.com/wd/hub');
 
 driver.init(capabilities)
 .then(async function(){
