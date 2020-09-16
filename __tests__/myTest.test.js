@@ -4,13 +4,11 @@ var wd = require('wd');
 var assert = require('assert');
 var asserters = wd.asserters;
 
-var userName = process.env.BROWSERSTACK_USERNAME;
-var accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
 var app = process.env.BROWSERSTACK_APP_ID;
 
 var capabilities = {
-  'browserstack.user' : userName,
-  'browserstack.key' : accessKey,
+  'browserstack.user' : 'johncarlodeleon1',
+  'browserstack.key' : 'EPnWvRvF8sxcKEC9xpat',
   'app' : app,
   'project': 'Demo Project',
   'device' : 'Google Pixel 3',
@@ -19,7 +17,7 @@ var capabilities = {
   'name': 'Unit Test',
 };
 
-const driver = wd.promiseRemote('http://@hub-cloud.browserstack.com/wd/hub');
+const driver = wd.promiseRemote('  https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@hub-cloud.browserstack.com/wd/hub');
 
 driver.init(capabilities)
 .then(async function(){
