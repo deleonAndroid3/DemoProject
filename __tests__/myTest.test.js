@@ -23,12 +23,12 @@ const driver = wd.promiseRemote('http://@hub-cloud.browserstack.com/wd/hub');
 
 driver.init(capabilities)
 .then(async function(){
-  return driver.elementByAccessibilityId('nameInput');
+  return driver.elementByAccessibilityId('nameInput').type('Carlo');
 })
 .then(async function(){
-  return driver.elementByAccessibilityId('saveName');
+  return driver.elementByAccessibilityId('saveName').click();
 })
-.fin(function(){return driver.quit(); })
+// .fin(function(){return driver.quit(); })
 .done();
 
 // beforeAll(async () => {
