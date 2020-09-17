@@ -20,11 +20,11 @@ const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@h
 
 driver.init(capabilities)
 .then(async function(){
-  return driver.elementByAccessibilityId('nameInput');
+  return driver.elementByAccessibilityId('nameInput').type('Carlo');
 })
 .then(async function(){
-  return driver.elementByAccessibilityId('saveName');
+  return driver.elementByAccessibilityId('saveName').click( );
 })
-// .fin(function(){return driver.quit(); })
+.fin(function(){return driver.quit(); })
 .done();
 
