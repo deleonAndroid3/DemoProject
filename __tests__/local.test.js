@@ -23,11 +23,11 @@ test('Correct Input', async () => {
 test('Wrong Input', async () => {
     let element = await driver.elementByAccessibilityId('nameInput');
     await element.type('Carlo123');
-    await driver.elementByAccessibilityId('saveName1').click();
+    await driver.elementByAccessibilityId('saveName').click();
   });
 
 test('Empty Input', async () => {
     let element = await driver.elementByAccessibilityId('nameInput');
     await element.type('');
-    await driver.elementByAccessibilityId('saveName2').click();
+    await driver.elementByAccessibilityId('saveName').click();
   });

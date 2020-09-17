@@ -132,7 +132,7 @@ jobs:
     steps:
       - checkout
 
-      - run: react-native start
+      - run: npx react-native start
 
 workflows:
   version: 2.1
