@@ -99,7 +99,7 @@ jobs:
       - run: ./gradlew test     
       
       - run:
-          command: yarn test
+          command: yarn test myTest.test.js
       
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
