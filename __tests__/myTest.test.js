@@ -25,19 +25,19 @@ beforeAll(() => {
 
 test('Correct Input',  () => {
   let element =  driver.elementByAccessibilityId('nameInput');
-   element.type('Carlo');
+   element.sendKeys('Carlo');
    driver.elementByAccessibilityId('saveName').click();
 });
 
 test('Wrong Input',  () => {
   let element =  driver.elementByAccessibilityId('nameInput');
-   element.type('Carlo123');
+   element.sendKeys('Carlo123');
    driver.elementByAccessibilityId('saveName').click();
 });
 
 test('Empty Input',  () => {
   let element =  driver.elementByAccessibilityId('nameInput');
-   element.type('');
+   element.sendKeys('');
    driver.elementByAccessibilityId('saveName').click();
 });
 
