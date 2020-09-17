@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 
-var wd = require('wd');
-
+import wd from 'wd';
 
 var app = process.env.BROWSERSTACK_APP_ID;
 
@@ -18,26 +17,26 @@ var capabilities = {
 
 const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@hub-cloud.browserstack.com/wd/hub');
 
-beforeAll(() => {
-   driver.init(capabilities);
-   driver.sleep(3000);
+beforeAll(async () => {
+  await driver.init(capabilities);
+  await driver.sleep(3000);
 }); // Sometime for the app to load
 
-test('Correct Input',  () => {
-  let element =  driver.elementByAccessibilityId('nameInput');
-   element.addValue('Carlo');
-   driver.elementByAccessibilityId('saveName').click();
+test('Correct Input', async () => {
+  // let element = await driver.elementByAccessibilityId('nameInput');
+  // await element.type('Carlo');
+  await driver.elementByAccessibilityId('saveName').click();
 });
 
-test('Wrong Input',  () => {
-  let element =  driver.elementByAccessibilityId('nameInput');
-   element.addValue('Carlo123');
-   driver.elementByAccessibilityId('saveName').click();
+test('Wrong Input', async () => {
+  // let element = await driver.elementByAccessibilityId('nameInput');
+  // await element.type('Carlo123');
+  await driver.elementByAccessibilityId('saveName1').click();
 });
 
-test('Empty Input',  () => {
-  let element =  driver.elementByAccessibilityId('nameInput');
-   element.addValue('');
-   driver.elementByAccessibilityId('saveName').click();
+test('Empty Input', async () => {
+  // let element = await driver.elementByAccessibilityId('nameInput');
+  // await element.type('');
+  await driver.elementByAccessibilityId('saveName2').click();
 });
 

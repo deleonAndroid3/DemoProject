@@ -15,19 +15,19 @@ beforeAll(async () => {
   }); // Sometime for the app to load
 
 test('Correct Input', async () => {
-    let element = await driver.elementByAccessibilityId('nameInput');
-    await element.type('Carlo');
+    // let element = await driver.elementByAccessibilityId('nameInput');
+    // await element.type('Carlo');
     await driver.elementByAccessibilityId('saveName').click();
   });
 
 test('Wrong Input', async () => {
-    let element = await driver.elementByAccessibilityId('nameInput');
-    await element.type('Carlo123');
-    await driver.elementByAccessibilityId('saveName').click();
+    // let element = await driver.elementByAccessibilityId('nameInput');
+    // await element.type('Carlo123');
+    await driver.elementByAccessibilityId('saveName1').click();
   });
 
 test('Empty Input', async () => {
-    let element = await driver.elementByAccessibilityId('nameInput');
-    await element.type('');
-    await driver.elementByAccessibilityId('saveName').click();
+    // let element = await driver.elementByAccessibilityId('nameInput');
+    // await element.type('');
+    await driver.elementByAccessibilityId('saveName2').click();
   });
