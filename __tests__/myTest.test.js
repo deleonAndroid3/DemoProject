@@ -18,26 +18,26 @@ var capabilities = {
 
 const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@hub-cloud.browserstack.com/wd/hub');
 
-beforeAll(async () => {
-  await driver.init(capabilities);
-  await driver.sleep(3000);
+beforeAll(() => {
+   driver.init(capabilities);
+   driver.sleep(3000);
 }); // Sometime for the app to load
 
-test('Correct Input', async () => {
-  let element = await driver.elementByAccessibilityId('nameInput');
-  await element.type('Carlo');
-  await driver.elementByAccessibilityId('saveName').click();
+test('Correct Input',  () => {
+  let element =  driver.elementByAccessibilityId('nameInput');
+   element.type('Carlo');
+   driver.elementByAccessibilityId('saveName').click();
 });
 
-test('Wrong Input', async () => {
-  let element = await driver.elementByAccessibilityId('nameInput');
-  await element.type('Carlo123');
-  await driver.elementByAccessibilityId('saveName').click();
+test('Wrong Input',  () => {
+  let element =  driver.elementByAccessibilityId('nameInput');
+   element.type('Carlo123');
+   driver.elementByAccessibilityId('saveName').click();
 });
 
-test('Empty Input', async () => {
-  let element = await driver.elementByAccessibilityId('nameInput');
-  await element.type('');
-  await driver.elementByAccessibilityId('saveName').click();
+test('Empty Input',  () => {
+  let element =  driver.elementByAccessibilityId('nameInput');
+   element.type('');
+   driver.elementByAccessibilityId('saveName').click();
 });
 
