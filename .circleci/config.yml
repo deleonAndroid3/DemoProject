@@ -17,8 +17,6 @@ jobs:
       - restore_cache:
           key: node-v1-{{ checksum "package.json" }}-{{ arch }}
 
-      - run: npm install wd
-
       - save_cache:
           key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
           paths:
@@ -29,13 +27,13 @@ jobs:
           paths:
             - node_modules
 
-      # - run:
-      #     name: jest tests
-      #     command: |
-      #       mkdir -p test-results/jest
-      #       yarn run test
-      #     environment:
-      #       JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
+      - run:
+          name: jest tests
+          command: |
+            mkdir -p test-results/jest
+            yarn run test
+          environment:
+            JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
 
       - persist_to_workspace:
           root: ~/demo-react-native
@@ -98,9 +96,6 @@ jobs:
 
       - run: ./gradlew test     
       
-      - run:
-          command: yarn test myTest.test.js
-      
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
 
@@ -124,16 +119,6 @@ jobs:
       - store_artifacts:
           path: test-results
 
-  react-native-start:
-    working_directory: ~/demo-react-native
-    docker:
-      - image: circleci/node:14.8.0
-    
-    steps:
-      - checkout
-
-      - run: npx react-native start
-
 workflows:
   version: 2.1
   node-android-ios:
@@ -142,7 +127,5 @@ workflows:
       - android:
           requires:
             - node
-      - react-native-start:
-          requires:
-            - node
+
 
