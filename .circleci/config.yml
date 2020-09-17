@@ -99,8 +99,7 @@ jobs:
       - run: ./gradlew test     
       
       - run:
-          path: ~/demo-react-native/__tests__
-          command: node myTest.test.js
+          command: yarn test
       
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
