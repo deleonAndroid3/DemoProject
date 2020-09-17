@@ -66,34 +66,11 @@ export default class Myproject extends Component {
 
         <TouchableOpacity
           onPress={this.joinData}
-          // onPress={() => {
-          //   ToastAndroid.show('first', ToastAndroid.SHORT);
-          // }}
           activeOpacity={0.7}
           style={styles.button}
           accessibilityLabel="saveName">
           <Text style={styles.buttonText}> Add Values To FlatList </Text>
         </TouchableOpacity>
-
-        {/* <TouchableOpacity
-          onPress={() => {
-            ToastAndroid.show('second', ToastAndroid.SHORT);
-          }}
-          activeOpacity={0.7}
-          style={styles.button}
-          accessibilityLabel="saveName1">
-          <Text style={styles.buttonText}> Add Values To FlatList </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => {
-            ToastAndroid.show('third', ToastAndroid.SHORT);
-          }}
-          activeOpacity={0.7}
-          style={styles.button}
-          accessibilityLabel="saveName2">
-          <Text style={styles.buttonText}> Add Values To FlatList </Text>
-        </TouchableOpacity> */}
 
         <FlatList
           data={this.state.arrayHolder}

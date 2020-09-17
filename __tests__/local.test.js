@@ -15,6 +15,7 @@ beforeAll(async () => {
   }); // Sometime for the app to load
 
 test('Correct Input', async () => {
+    console.log(driver);
     let element = await driver.elementByAccessibilityId('nameInput');
     await element.type('Carlo');
     await driver.elementByAccessibilityId('saveName').click();
