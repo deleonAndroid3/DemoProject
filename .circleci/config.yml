@@ -124,6 +124,16 @@ jobs:
       - store_artifacts:
           path: test-results
 
+  react-native-start:
+    working_directory: ~/demo-react-native
+    docker:
+      - image: circleci/node:14.8.0
+    
+    steps:
+      - checkout
+
+      - run: react-native start
+
 workflows:
   version: 2.1
   node-android-ios:
@@ -132,5 +142,7 @@ workflows:
       - android:
           requires:
             - node
-
+      - react-native-start:
+          requires:
+            - node
 

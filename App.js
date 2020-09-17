@@ -65,17 +65,17 @@ export default class Myproject extends Component {
         />
 
         <TouchableOpacity
-          // onPress={this.joinData}
-          onPress={() => {
-            ToastAndroid.show('first', ToastAndroid.SHORT);
-          }}
+          onPress={this.joinData}
+          // onPress={() => {
+          //   ToastAndroid.show('first', ToastAndroid.SHORT);
+          // }}
           activeOpacity={0.7}
           style={styles.button}
           accessibilityLabel="saveName">
           <Text style={styles.buttonText}> Add Values To FlatList </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => {
             ToastAndroid.show('second', ToastAndroid.SHORT);
           }}
@@ -93,7 +93,7 @@ export default class Myproject extends Component {
           style={styles.button}
           accessibilityLabel="saveName2">
           <Text style={styles.buttonText}> Add Values To FlatList </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <FlatList
           data={this.state.arrayHolder}
