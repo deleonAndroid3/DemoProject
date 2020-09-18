@@ -12,10 +12,12 @@ var capabilities = {
 Object.assign(capabilities, {
   'browserstack.user' : 'johncarlodeleon1',
   'browserstack.key' : 'EPnWvRvF8sxcKEC9xpat',
+  'automationName': 'Appium',
   'project': 'My First Project',
   'build' : 'My First Build',
   'name': 'Bstack-[Node] Sample Test',
   'app' : app,
+  'browserstack.local': 'true',
 });
 
 const driver = wd.promiseRemote('https://johncarlodeleon1:EPnWvRvF8sxcKEC9xpat@hub-cloud.browserstack.com/wd/hub');
@@ -32,7 +34,6 @@ beforeAll( () => {
 }); // Sometime for the app to load
 
 test('Correct Input',  () => {
-  console.log(driver);
   let element =  driver.elementByAccessibilityId('nameInput');
   element.type('Carlo');
   driver.elementByAccessibilityId('saveName').click();
