@@ -47,6 +47,9 @@ driver
       30000,
     );
   })
+  .then(function (saveInput) {
+    return saveInput.click();
+  })
   .then(function () {
     return driver.waitForElementByAccessibilityId(
       'nameInput',
@@ -63,6 +66,9 @@ driver
       asserters.isDisplayed && asserters.isEnabled,
       30000,
     );
+  })
+  .then(function (saveInput) {
+    return saveInput.click();
   })
   .fin(function () {
     return driver.quit();
