@@ -42,7 +42,24 @@ driver
   })
   .then(function () {
     return driver.waitForElementByAccessibilityId(
+      'saveName',
+      asserters.isDisplayed && asserters.isEnabled,
+      30000,
+    );
+  })
+  .then(function () {
+    return driver.waitForElementByAccessibilityId(
       'nameInput',
+      asserters.isDisplayed && asserters.isEnabled,
+      30000,
+    );
+  })
+  .then(function (Input) {
+    return Input.sendKeys('BrowserStack123');
+  })
+  .then(function () {
+    return driver.waitForElementByAccessibilityId(
+      'saveName',
       asserters.isDisplayed && asserters.isEnabled,
       30000,
     );
