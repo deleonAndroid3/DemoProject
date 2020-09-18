@@ -57,8 +57,8 @@ jobs:
       - attach_workspace:
           at: ~/demo-react-native
 
-      - node/install:
-          install-yarn: true
+      # - node/install:
+      #     install-yarn: true
 
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
@@ -94,7 +94,9 @@ jobs:
               exit 1;
             fi
 
-      - run: ./gradlew test     
+      # - run: ./gradlew test  
+      
+      - run: node singletest.js
       
       # - restore_cache:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}

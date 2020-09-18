@@ -62,13 +62,17 @@ export default class Myproject extends Component {
           style={styles.textInputStyle}
           underlineColorAndroid="transparent"
           accessibilityLabel="nameInput"
+          testID="nameInput"
+          nativeID="nameInput"
         />
 
         <TouchableOpacity
           onPress={this.joinData}
           activeOpacity={0.7}
           style={styles.button}
-          accessibilityLabel="saveName">
+          accessibilityLabel="saveName"
+          testID="saveName"
+          nativeID="saveName">
           <Text style={styles.buttonText}> Add Values To FlatList </Text>
         </TouchableOpacity>
 
