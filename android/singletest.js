@@ -21,7 +21,7 @@ let contexts =  driver.contexts();
 
 driver
   .init(desiredCaps)
-  .contexts(contexts[1])
+  .context(contexts[1])
   .then(function () {
     return driver.waitForElementByAccessibilityId(
       'saveName',
