@@ -57,8 +57,8 @@ jobs:
       - attach_workspace:
           at: ~/demo-react-native
 
-      # - node/install:
-      #     install-yarn: true
+      - node/install:
+          install-yarn: true
 
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
