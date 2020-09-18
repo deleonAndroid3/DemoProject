@@ -17,11 +17,9 @@ var desiredCaps = {
 //   'browserstack.local': true,
 };
 var driver = wd.promiseRemote('http://hub-cloud.browserstack.com/wd/hub');
-let contexts =  driver.contexts();
 
 driver
   .init(desiredCaps)
-  .context(contexts[1])
   .then(function () {
     return driver.waitForElementByAccessibilityId(
       'saveName',
